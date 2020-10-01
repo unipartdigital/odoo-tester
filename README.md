@@ -1,6 +1,6 @@
 # Odoo automated unit test runner
 
-[![Build Status](https://travis-ci.org/unipartdigital/odoo-tester.svg?branch=master)](https://travis-ci.org/unipartdigital/odoo-tester)
+[![Build Status](https://travis-ci.org/unipartdigital/odoo-tester.svg?branch=13.0)](https://travis-ci.org/unipartdigital/odoo-tester)
 
 This is a recipe for building a [Docker](https://www.docker.com/)
 container suitable for running automated unit tests on
@@ -9,25 +9,25 @@ using [Fedora](https://getfedora.org/) and the latest Odoo branch.
 Almost all dependencies are provided using official Fedora packages.
 
 The resulting container is published on Docker Hub as
-[`unipartdigital/odoo-tester`](https://hub.docker.com/r/unipartdigital/odoo-tester/).
+[`unipartdigital/odoo-tester:13.0`](https://hub.docker.com/r/unipartdigital/odoo-tester/).
 
 ## Building
 
 To build and publish the container image:
 
-    docker build -t unipartdigital/odoo-tester .
-    docker push unipartdigital/odoo-tester
+    docker build -t unipartdigital/odoo-tester:13.0 .
+    docker push unipartdigital/odoo-tester:13.0
 
 ## Running
 
 To run Odoo within the container:
 
-    docker run -it --rm unipartdigital/odoo-tester
+    docker run -it --rm unipartdigital/odoo-tester:13.0
 
 Any extra arguments will be appended to the `odoo-bin` command line.
 For example, to install the `product` module:
 
-    docker run -it --rm unipartdigital/odoo-tester -i product
+    docker run -it --rm unipartdigital/odoo-tester:13.0 -i product
 
 ## Extending
 
@@ -35,7 +35,7 @@ The primary use case for this container image is to allow for the
 automated testing of external Odoo modules.  An external module may
 include a `Dockerfile` such as:
 
-    FROM mcb30/odoo-tester
+    FROM unipartdigital/odoo-tester:13.0
     ADD addons/my_module /opt/odoo-addons/my_module
     CMD ["--test-enable", "-i", "my_module"]
 
