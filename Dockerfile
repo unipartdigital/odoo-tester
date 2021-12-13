@@ -2,7 +2,7 @@ FROM fedora:29
 
 # Odoo version
 #
-ENV ODOO_VERSION 13.0
+ENV ODOO_VERSION 14.0
 
 # Odoo requires a non-standard build of wkhtmltopdf for many use cases
 # (including running without a local X display).
