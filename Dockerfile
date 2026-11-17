@@ -25,7 +25,12 @@ RUN dnf install -y python3-PyPDF2 python3-passlib python3-babel \
 		   python3-docutils python3-num2words python3-phonenumbers \
 		   python3-vatnumber python3-xlrd python3-xlwt \
 		   python3-coverage python3-coveralls python3-magic \
-		   python3-polib \
+		   python3-polib python3-freezegun python3-gevent \
+		   python3-greenlet python3-libsass python3-mock \
+		   python3-ofxparse python3-pydot python3-pyparsing \
+		   python3-pyserial python3-pyusb python3-qrcode-core \
+		   python3-stdnum python3-vobject python3-xlsxwriter \
+		   python3-zeep \
 		   wkhtmltopdf nodejs-less postgresql-server \
 		   findutils unzip libpng15 compat-openssl10 ${H2P_URI} \
 		   texlive-times texlive-courier ; \
